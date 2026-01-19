@@ -1,6 +1,9 @@
 # XPort
 
 A Chrome extension to export X (Twitter) articles to PDF, Markdown, HTML, or plain text.
+# Demo
+
+https://github.com/user-attachments/assets/4fb39d0e-9223-4595-ae64-baafdf952c27
 
 ## Features
 
