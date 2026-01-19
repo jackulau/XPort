@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XPort - Settings</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <div>
+          <h1>XPort</h1>
+          <p>Settings</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="settings-section">
+        <h2>Default Format</h2>
+        <p class="section-description">Choose the default format for quick downloads</p>
+
+        <div class="format-grid">
+          <label class="format-option">
+            <input type="radio" name="defaultFormat" value="pdf">
+            <div class="format-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span class="format-name">PDF</span>
+              <span class="format-desc">Portable Document Format</span>
+            </div>
+          </label>
+
+          <label class="format-option">
+            <input type="radio" name="defaultFormat" value="markdown">
+            <div class="format-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M9 15l2 2 4-4"></path>
+              </svg>
+              <span class="format-name">Markdown</span>
+              <span class="format-desc">Plain text with formatting</span>
+            </div>
+          </label>
+
+          <label class="format-option">
+            <input type="radio" name="defaultFormat" value="html">
+            <div class="format-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span class="format-name">HTML</span>
+              <span class="format-desc">Web page format</span>
+            </div>
+          </label>
+
+          <label class="format-option">
+            <input type="radio" name="defaultFormat" value="text">
+            <div class="format-card">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="17" y1="10" x2="3" y2="10"></line>
+                <line x1="21" y1="6" x2="3" y2="6"></line>
+                <line x1="21" y1="14" x2="3" y2="14"></line>
+                <line x1="17" y1="18" x2="3" y2="18"></line>
+              </svg>
+              <span class="format-name">Plain Text</span>
+              <span class="format-desc">Simple text file</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Default Options</h2>
+        <p class="section-description">Configure default behavior for article extraction</p>
+
+        <div class="options-list">
+          <label class="option-item">
+            <div class="option-info">
+              <span class="option-name">Include Images</span>
+              <span class="option-desc">Download and embed images in the output</span>
+            </div>
+            <input type="checkbox" id="defaultIncludeImages" class="toggle">
+          </label>
+
+          <label class="option-item">
+            <div class="option-info">
+              <span class="option-name">Include Full Thread</span>
+              <span class="option-desc">Extract the entire thread, not just the main post</span>
+            </div>
+            <input type="checkbox" id="defaultIncludeThread" class="toggle">
+          </label>
+
+          <label class="option-item">
+            <div class="option-info">
+              <span class="option-name">Include Metadata</span>
+              <span class="option-desc">Include date, likes, retweets, and other stats</span>
+            </div>
+            <input type="checkbox" id="defaultIncludeMetadata" class="toggle">
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>PDF Settings</h2>
+        <p class="section-description">Customize PDF output appearance</p>
+
+        <div class="options-list">
+          <div class="option-item">
+            <div class="option-info">
+              <span class="option-name">Page Size</span>
+              <span class="option-desc">Select the PDF page dimensions</span>
+            </div>
+            <select id="pdfPageSize" class="select">
+              <option value="a4">A4</option>
+              <option value="letter">Letter</option>
+              <option value="legal">Legal</option>
+            </select>
+          </div>
+
+          <div class="option-item">
+            <div class="option-info">
+              <span class="option-name">Font Size</span>
+              <span class="option-desc">Base font size for PDF content</span>
+            </div>
+            <select id="pdfFontSize" class="select">
+              <option value="10">Small (10pt)</option>
+              <option value="12">Medium (12pt)</option>
+              <option value="14">Large (14pt)</option>
+            </select>
+          </div>
+
+          <label class="option-item">
+            <div class="option-info">
+              <span class="option-name">Dark Mode PDF</span>
+              <span class="option-desc">Use dark background for PDF output</span>
+            </div>
+            <input type="checkbox" id="pdfDarkMode" class="toggle">
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>File Naming</h2>
+        <p class="section-description">Configure how downloaded files are named</p>
+
+        <div class="options-list">
+          <div class="option-item">
+            <div class="option-info">
+              <span class="option-name">Filename Pattern</span>
+              <span class="option-desc">Available: {author}, {date}, {id}</span>
+            </div>
+            <input type="text" id="filenamePattern" class="text-input" value="{author}_{date}_{id}">
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="resetBtn" class="btn btn-secondary">Reset to Defaults</button>
+        <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+      </div>
+
+      <div id="saveStatus" class="save-status hidden">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Settings saved successfully
+      </div>
+    </main>
+
+    <footer>
+      <p>XPort v1.0.0</p>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

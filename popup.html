@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XPort</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #16181c;
+      --bg-tertiary: #202327;
+      --text-primary: #e7e9ea;
+      --text-secondary: #71767b;
+      --accent: #1d9bf0;
+      --border: #2f3336;
+      --success: #00ba7c;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      width: 280px;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .header svg { color: var(--text-primary); }
+    .header h1 { font-size: 16px; font-weight: 700; }
+
+    .info {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    .info p {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-bottom: 1px solid var(--border);
+    }
+    .option-item:last-child {
+      border-bottom: none;
+    }
+    .option-item:hover {
+      background: var(--bg-tertiary);
+    }
+    .option-name {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .toggle {
+      appearance: none;
+      width: 40px;
+      height: 22px;
+      background: var(--bg-tertiary);
+      border-radius: 11px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex-shrink: 0;
+      border: none;
+      outline: none;
+    }
+    .toggle::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 18px;
+      height: 18px;
+      background: var(--text-secondary);
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .toggle:checked {
+      background: var(--accent);
+    }
+    .toggle:checked::before {
+      transform: translateX(18px);
+      background: white;
+    }
+
+    .save-status {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 8px;
+      background: rgba(0, 186, 124, 0.1);
+      color: var(--success);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .save-status.show {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+    <h1>XPort</h1>
+  </div>
+
+  <div class="info">
+    <p>Look for the book icon in the action bar of any X article to download or preview.</p>
+  </div>
+
+  <div class="section-title">Options</div>
+  <div class="options-list">
+    <label class="option-item">
+      <span class="option-name">Include Images</span>
+      <input type="checkbox" id="includeImages" class="toggle">
+    </label>
+    <label class="option-item">
+      <span class="option-name">Include Metadata</span>
+      <input type="checkbox" id="includeMetadata" class="toggle">
+    </label>
+    <label class="option-item">
+      <span class="option-name">Dark Mode Output</span>
+      <input type="checkbox" id="darkMode" class="toggle">
+    </label>
+  </div>
+
+  <div id="saveStatus" class="save-status">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    Saved
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
